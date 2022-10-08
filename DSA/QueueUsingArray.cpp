@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+using namespace std;
 
 typedef struct queue{
     int queuesize, front, rear;
@@ -14,17 +15,18 @@ int isfull(queue *q){
     else{return 0;}}
 void enqueue(queue *q, int value){
     if(isfull(q)){printf("\nqueue overflow\n");  }
-    else{q->rear++;   q->arr[q->rear]=value;  printf("\nelement enqueued in queue is %d\n",value);}
+    else{q->rear++;   q->arr[q->rear]=value;  printf("element enqueued in queue is %d\n",value);}
 }
 int dequeue(queue *q){
     if(isempty(q)){printf("\nqueue underflow\n");  }
-    else{q->front++;  printf("\nelement dequeued from the queue is %d\n",q->arr[q->front]);  return q->arr[q->front];}
+    else{q->front++;  printf("element dequeued from the queue is %d\n",q->arr[q->front]);  return q->arr[q->front];}
 }
 void queuetraversal(queue *q){
     q->front++;
     printf("\nqueue is;\t");
     while(q->front!=q->rear+1){printf("%d\t",q->arr[q->front]);  q->front++;}
     q->front=-1;
+    cout<<endl<<endl;
 }
 
 int main(){
@@ -39,3 +41,4 @@ int main(){
     dequeue(q1);
     queuetraversal(q1);
     return 0;
+}
