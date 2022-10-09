@@ -17,7 +17,7 @@ class Student{
       }
       void output(){
           float percentage;
-          for(int i=0; i<5; i++){ percentage+=marks[i]; }
+          for(int i=0; i<5; i++){ percentage+=(float)marks[i]; }
           percentage/=5.0;
           
           if(percentage>=70){
