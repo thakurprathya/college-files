@@ -2,25 +2,22 @@
 using namespace std;
 
 void subArraySum(int arr[], int n, int sum){  //O(n^2) time
+    int found=0;
     for(int i = 0; i < n; i++) {
         int currentSum = arr[i];
-        if(currentSum == sum){ cout<<"Sum found between indexes (0,"<<i<<")"<<endl; return;  }
-        else{
-            for(int j = i + 1; j < n; j++){
-                currentSum += arr[j];
-                if(currentSum == sum){
-                    cout<<"Sum found between indexes ("<<i<<","<<j<<")"<<endl;
-                    return;
-                }
+        for(int j = i + 1; j < n; j++){
+            currentSum += arr[j];
+            if(currentSum == sum){
+                found=1;
+                cout<<"Sum = "<<sum<<" found between indexes ("<<i<<","<<j<<")"<<endl;
             }
         }
     }
-    cout << "No subarray found";
-    return;
+    if(!found){ cout << "No subarray found"; }
 }
 
 int main(){
-    int arr[]={1,-1,2,-3,33,-3,5};
+    int arr[]={1,-1,2,-2,3,-3,5};
     int n=sizeof(arr)/sizeof(arr[0]);
     subArraySum(arr,n, 0);
     return 0;
