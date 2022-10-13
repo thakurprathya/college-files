@@ -7,4 +7,4 @@
 **/.DS_Store
 
 # to prevent compiled executables to get added from any folder
-[^\.]*
+# [^\.]*
