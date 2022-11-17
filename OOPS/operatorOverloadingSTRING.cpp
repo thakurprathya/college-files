@@ -13,10 +13,9 @@ class STRING{
     public:
         STRING(){ str=""; }
         STRING(string s){ str=s; }
-        void concat(STRING obj){ str += obj.str; }
-        void copy(STRING obj){ str = obj.str; }
-        int compare(STRING obj){
-            int res=0;
+        STRING operator+(STRING obj){ STRING s=str+obj.str; return s; }  //return type is class obj when using  + on 2 class objects
+        STRING operator=(STRING obj){ str= obj.str; return str; }
+        int operator<=(STRING obj){  //return type will be int when using <= on two class objects
             if(str.length() < obj.str.length()){ return 1; }
             else if(str.length() > obj.str.length()){ return -1; }
             else{
@@ -38,16 +37,23 @@ class STRING{
 };
 
 int main(){
-    STRING o1("Hello "), o2("World"), o3;
-    o1.display(), o2.display(), o3.display();
+    STRING o1("Hello "), o2("World");
+    o1.display(), o2.display();
 
     o1.toUpper(); o1.display();
     o1.toLower(); o1.display();
-    o3.copy(o2); o3.display();
-    o3.concat(o1); o3.display();
-    o3.length();
-    cout<<"result on comparing obj3 and obj2: "<<o3.compare(o2)<<endl;
-    cout<<"result on comparing obj1 and obj2: "<<o1.compare(o2)<<endl;
-    cout<<"result on comparing obj1 and obj1: "<<o1.compare(o1)<<endl;
+    o1.length();
+
+    STRING o3= o1+o2;  //calling addition operator
+    o3.display();
+    o3 = o1;  //calling equal to operator
+    o3.display();
+
+    int res= o2<=o1;  //calling less than equla to operator
+    cout<<res<<endl;
+    res= o3<=o1;  //calling less than equla to operator
+    cout<<res<<endl;
+    res= o3<=o2;  //calling less than equla to operator
+    cout<<res<<endl;
     return 0;
 }
