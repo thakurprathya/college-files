@@ -12,7 +12,7 @@ class studentInfo{
             cout<<"Enter Name, age, sex: "; cin>>name>>age>>sex;
             cout<<"Enter height and weight in centimeters: "; cin>>height>>weight;
         }
-        string setStr(){
+        string Str(){
             string st="\nName: "+name+"\nAge: "+to_string(age)+"\tSex: "+sex+"\nHeight: "+to_string(height)+"\tWeight: "+to_string(weight)+"\n";
             return st;
         }
@@ -24,15 +24,17 @@ int main(){
     ofstream file1("program32.txt");
     for(int i=0; i<n; i++){
         obj[i].getData();
-        string s= obj[i].setStr();
-        file1 << s;
+        file1.write((char*)&obj[i],sizeof(obj[i]));
     }
     file1.close(); cout<<"Data stored & file closed!"<<endl<<endl;
     
     ifstream file2("program32.txt");
     cout<<"Contents of file are: "<<endl;
-    string str;
-    while(getline(file2, str)){ cout<<str<<endl; }
-    file2.close();
+    for(int i=0; i<n; i++){
+        while(file2.read((char*)&obj[i],sizeof(obj[i]))){
+            cout<<obj[i].Str();
+        }
+    }
+    file2.close(); cout<<"Data displayed & file closed!"<<endl<<endl;
     return 0;
 }

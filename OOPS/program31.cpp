@@ -1,4 +1,4 @@
-//Write a program to perform deletion of whitespaces such as horizontal tab, vertical tab, space, line feed, new line and carraige return from a text file and store the contents of the file without the white spaces on another file.
+//Write a program to perform deletion of whitespaces such as horizontal tab, vertical tab, space, line feed, new line and carriage return from a text file and store the contents of the file without the white spaces on another file.
 #include<iostream>
 #include<fstream>
 using namespace std;
