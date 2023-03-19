@@ -1,0 +1,32 @@
+* Write a program to show Matrix Addition without using Functions
+
+code:
+    m=input("rows : ")
+    n=input("columns : ")
+    A=zeros(m,n)
+    B=zeros(m,n)
+    C=zeros(m,n)
+    disp("Enter the elements of first matrix row wise: ")
+    for i=1:m
+        for j=1:n
+            A(i,j)=input("");
+            end
+    end
+    disp("Enter the elements of second matrix: ")
+    for i=1:m
+        for j=1:n
+            B(i,j)=input("");
+            end
+    end
+    for i=1:m
+        for j=1:n
+            C(i,j) = A(i,j) + B(i,j);
+            end
+    end
+
+    disp("First Matrix")
+    disp(A)
+    disp("Second Matrix")
+    disp(B)
+    disp("Resultant Matrix")
+    disp(C)

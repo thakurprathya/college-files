@@ -1,0 +1,40 @@
+* Write a program to show Matrix Multiplication without using Functions
+
+code:
+    m1=input("rows M1 : ")
+    n1=input("columns M1 : ")
+    m2=input("rows M2 : ")
+    n2=input("columns M2 : ")
+    if(n1 ~= m2)
+        disp("Multiplication not possible.")
+    else
+        A=zeros(m1,n1)
+        B=zeros(m2,n2)
+        C=zeros(m1,n2)
+        disp("Enter the elements of first matrix element by element: ")
+        for i=1:m1
+            for j=1:n1
+                A(i,j)=input("");
+                end
+        end
+        disp("Enter the elements of second matrix element by element: ")
+        for i=1:m2
+            for j=1:n2
+                B(i,j)=input("");
+                end
+        end
+        for i=1:m1
+            for j=1:n2
+                for k=1:n2
+                C(i,j) = C(i,j) + A(i,j)*B(i,j);
+                end
+            end
+        end
+
+        disp("First Matrix")
+        disp(A)
+        disp("Second Matrix")
+        disp(B)
+        disp("Resultant Matrix")
+        disp(C)
+    end

@@ -1,0 +1,22 @@
+* Write a program to show Transpose of Matrix without using Functions
+
+code:
+    m=input('Enter theno of rows ofmatrix')
+    n=input('Enter the no of columns of matrix')
+    A=zeros(m,n)
+    B=zeros(m,n)
+    disp("Enter the elements ofmatrix row wise')
+    for i=1:m
+        for j=1:n
+            A(ij)=input(");
+        end
+    end
+    fori=1:n
+        for j=1:m
+            B(ij)=A(,i); 
+        end
+    end
+    disp('The matrix is')
+    disp(A)
+    disp('The transposed matrix is')
+    disp(B)
