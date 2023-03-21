@@ -1,5 +1,4 @@
 //Program to find ASCII code of a character
-
 import java.util.Scanner;
 
 public class printASCII {
