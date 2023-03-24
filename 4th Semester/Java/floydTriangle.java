@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class floydTriangle {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-
         System.out.println("Enter number of rows for floyd triangle: ");
         int rows = s.nextInt();
 
@@ -22,6 +21,4 @@ public class floydTriangle {
             i++;
         }
     }
-
-
 }
