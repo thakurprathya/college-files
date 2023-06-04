@@ -1,0 +1,55 @@
+Certainly! Here's a step-by-step example demonstrating how to create a runnable JAR file using the `jar` command-line tool:
+
+1. Create a Java project directory with the following structure:
+   ```
+   RunnableJARExample
+   └── src
+       └── com
+           └── example
+               └── Main.java
+   ```
+
+2. Inside the `Main.java` file, add the following code:
+   ```java
+   package com.example;
+
+   public class Main {
+       public static void main(String[] args) {
+           System.out.println("Hello, World!");
+       }
+   }
+   ```
+
+3. Open a command prompt or terminal and navigate to the root directory of your project (`RunnableJARExample`).
+
+4. Compile the Java source file by running the following command:
+   ```
+   javac -d bin src/com/example/Main.java
+   ```
+
+   This command compiles the `Main.java` file and places the compiled class file in the `bin` directory.
+
+5. Create a manifest file named `Manifest.txt` (without any file extension) in the root directory (`RunnableJARExample`) and add the following line to it:
+   ```
+   Main-Class: com.example.Main
+   ```
+
+   This specifies the main class for the JAR file.
+
+6. Now, create the JAR file using the following command:
+   ```
+   jar cfm RunnableJARExample.jar Manifest.txt -C bin .
+   ```
+
+   This command creates a JAR file named `RunnableJARExample.jar` with the contents of the `bin` directory and associates the `Manifest.txt` file as the manifest for the JAR file.
+
+7. The JAR file `RunnableJARExample.jar` will be created in the root directory (`RunnableJARExample`).
+
+8. Finally, run the JAR file using the following command:
+   ```
+   java -jar RunnableJARExample.jar
+   ```
+
+   You should see the output `Hello, World!` printed in the console.
+
+That's it! You have successfully created a runnable JAR file using the `jar` command-line tool. You can distribute and run the JAR file on any machine with Java installed by using the `java -jar` command.
